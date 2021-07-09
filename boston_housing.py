@@ -1,15 +1,12 @@
 # /chapter/4_7_1_MLP.ipynb
 # /chapter/4_7_1_MLP.ipynb
 # from keras.preprocessing import sequence
-from keras.models import Sequential
-from keras.datasets import boston_housing
-from keras.layers import Dense, Dropout
 # from keras.utils import multi_gpu_model
 # from keras import regularizers  # 正则化
 # import matplotlib.pyplot as plt
 # import numpy as np
-from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
+from keras.datasets import boston_housing
 
 (x_train, y_train), (x_valid, y_valid) = boston_housing.load_data()  # 加载数据
 
@@ -24,10 +21,10 @@ y_valid_pd = pd.DataFrame(y_valid)
 # print(y_train_pd.head(5))
 
 # # 训练集归一化
-min_max_scaler = MinMaxScaler()
-min_max_scaler.fit(x_train_pd)
-x_train = min_max_scaler.transform(x_train_pd)
-print(x_train)
+# min_max_scaler = MinMaxScaler()
+# min_max_scaler.fit(x_train_pd)
+# x_train = min_max_scaler.transform(x_train_pd)
+# print(x_train)
 #
 # min_max_scaler.fit(y_train_pd)
 # y_train = min_max_scaler.transform(y_train_pd)
